@@ -25,7 +25,7 @@ export default function Canva(props) {
   return (
     <div
       className="flex flex-col border-4 border-black border-solid 
-    w-9/12 h-11/12 my-4 mr-4 rounded shadow-2xl p-4 gap-2"
+    w-9/12 h-11/12 my-4 mr-4 rounded shadow-2xl p-4 gap-4"
     >
       <textarea
         className="text-5xl font-extrabold  p-2
@@ -54,19 +54,3 @@ export default function Canva(props) {
     </div>
   );
 }
-
-// <form className="flex flex-col" onChange={HandleChange}>
-//   <input
-//     id="titulo"
-//     className="text-5xl font-extrabold m-4"
-//     type="text"
-//     value={postCanva.titulo}
-//   />
-
-//   <input
-//     id="conteudo"
-//     type="text"
-//     className="text-2xl font-extrabold m-4"
-//     value={postCanva.conteudo}
-//   />
-// </form>;

@@ -10,8 +10,12 @@ function App() {
   // State of the post beeing edited
   const [editingNow, setEditingNow] = useState(conteudo[0]);
 
-  const createNewPostComponent = (updatedContent) => {
-    setConteudo(updatedContent);
+  const createNewPostComponent = () => {
+    let novo = [
+      ...conteudo,
+      { titulo: "New post!", conteudo: "New frontiers, new opportunities" },
+    ];
+    setConteudo(novo);
   };
 
   const clickedChild = (e) => {
@@ -30,7 +34,7 @@ function App() {
       <ContentBar
         conteudo={conteudo}
         clickedChild={clickedChild}
-        createNewPostComponent={createNewPostComponent}
+        NewPostComponentCreated={createNewPostComponent}
       />
       <Canva postSendoEditado={editingNow} postFoiEditado={postFoiEditado} />
     </div>

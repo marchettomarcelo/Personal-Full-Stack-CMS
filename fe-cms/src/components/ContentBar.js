@@ -1,29 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import ContentItem from "./ContentItem";
 import Controls from "./ControlBar";
 
 export default function ContentBar(props) {
-  // receives the content from parent component
-
-  const [conteudo, setConteudo] = useState({ titulo: "", conteudo: "" });
-
-  useEffect(() => {
-    setConteudo(props.conteudo);
-  }, [props.conteudo]);
-
   const messagesEndRef = useRef(null);
 
   //------------------------Create new post function------------------------
   const CreateNewPost = async () => {
     await messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    let novo = [
-      ...conteudo,
-      { titulo: "New post!", conteudo: "New frontiers, new opportunities" },
-    ];
-    setConteudo(novo);
-
-    //send new data to parent component
-    props.createNewPostComponent(novo);
+    props.NewPostComponentCreated();
     await messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -32,7 +17,8 @@ export default function ContentBar(props) {
     if (e.target.id === "Controls") {
       CreateNewPost();
     } else if (e.target.id === "save") {
-      console.log(conteudo);
+      // ---make api later---
+      console.log(props.conteudo);
     } else if (e.target.id) {
       return props.clickedChild(e.target.id);
     }
@@ -46,7 +32,7 @@ export default function ContentBar(props) {
       <Controls />
 
       <div className="overflow-y-auto w-full overscroll-non">
-        {Array.from(conteudo).map((post, id) => {
+        {Array.from(props.conteudo).map((post, id) => {
           return (
             <ContentItem
               id={id}

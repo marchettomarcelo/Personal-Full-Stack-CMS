@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
 
 export default function Canva(props) {
+  //State of the post being currently edited
   const [postCanva, setPostCanva] = useState({
     titulo: "",
     conteudo: "",
   });
 
+  //Informing the canva component of the values of the post being edited
   useEffect(() => {
     setPostCanva(props.postSendoEditado);
   }, [props.postSendoEditado]);
 
+  //notifiing parent component of changes on the current post
   const HandleChange = async (e) => {
     let novo = {
       ...postCanva,
       [e.target.id]: e.target.value,
     };
-
     await props.postFoiEditado(novo);
     setPostCanva(novo);
   };

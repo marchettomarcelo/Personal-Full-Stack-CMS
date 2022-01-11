@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Canva from "./components/Canva";
 import ContentBar from "./components/ContentBar";
 //import MockData from "./data";
+import GetTitulos from "./utils/GetTitulos";
+
 const axios = require("axios");
 
 function App() {
@@ -27,7 +29,6 @@ function App() {
 
   const createNewPostComponent = () => {
     //await axios.post("/post", )
-
     let novo = [
       ...conteudo,
       { titulo: "New post!", conteudo: "New frontiers, new opportunities" },
@@ -36,6 +37,17 @@ function App() {
   };
 
   const clickedChild = (e) => {
+    const ArrayOftitulos = GetTitulos(conteudo);
+
+    const titulosDuplicados = ArrayOftitulos.filter(
+      (item) => item === editingNow.titulo
+    );
+
+    if (titulosDuplicados.length > 1) {
+      console.log("deu rui men");
+      return;
+    }
+
     setEditingNow(conteudo[e]);
   };
 

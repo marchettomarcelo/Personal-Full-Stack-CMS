@@ -9,7 +9,7 @@ export default function ContentItem({ conteudo, id, titulo }) {
       <h3 id={id} className="text-xl font-bold">
         {titulo.length > 20 ? titulo.slice(0, 20) + "..." : titulo}
       </h3>
-      <p id={id} className="text-sm">
+      <p id={id} className="text-sm break-all">
         {conteudo.length > 80 ? conteudo.slice(0, 80) + "..." : conteudo}
       </p>
     </div>

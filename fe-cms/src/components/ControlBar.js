@@ -5,9 +5,10 @@ export default function Controls() {
         id="Controls"
         className="border-4 bg-green-400 border-black border-solid 
           rounded shadow-lg  hover:bg-green-500 
-          active:bg-green-600 cursor-pointer flex-grow p-3"
+          active:bg-green-600 cursor-pointer flex-grow p-3
+          "
       >
-        <h3 id="Controls" className="text-2xl font-bold">
+        <h3 id="Controls" className="text-2xl font-bold text-center">
           Adicionar post
         </h3>
       </div>
@@ -18,7 +19,7 @@ export default function Controls() {
            rounded shadow-lg  hover:bg-blue-500 
           active:bg-blue-600 cursor-pointer flex-grow mt-2 p-3 xl:ml-2 xl:mt-0"
       >
-        <h3 id="save" className="text-2xl font-bold">
+        <h3 id="save" className="text-2xl font-bold text-center">
           Salvar Mudanças
         </h3>
       </div>

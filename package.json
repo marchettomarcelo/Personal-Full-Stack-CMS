@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "build": "cd fe-cms && npm install && npm run build"
+    "build": "cd fe-cms && npm install && npm run build",
+    "db": "/Users/marcelomarchetto/mongodb/bin/mongod --dbpath=/Users/marcelomarchetto/mongodb-data"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "mongoose": "^6.1.6"
   },
   "engines": {
     "node": "16.4.0"

@@ -29,9 +29,24 @@ function App() {
 
   const createNewPostComponent = () => {
     //await axios.post("/post", )
+    var UniqueNewPostTitle = "";
+    const ArrayOftitulos = GetTitulos(conteudo);
+
+    for (let i = 0; i < conteudo.length; i++) {
+      const NewPostPossibility = `New Post ${i}.0`;
+
+      if (!ArrayOftitulos.includes(NewPostPossibility)) {
+        UniqueNewPostTitle = NewPostPossibility;
+        break;
+      }
+    }
+
     let novo = [
       ...conteudo,
-      { titulo: "New post!", conteudo: "New frontiers, new opportunities" },
+      {
+        titulo: UniqueNewPostTitle,
+        conteudo: "New frontiers, new opportunities",
+      },
     ];
     setConteudo(novo);
   };
